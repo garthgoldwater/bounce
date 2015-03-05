@@ -5,12 +5,15 @@
 
     event.preventDefault();
 
-    Messages.insert({
+    newMessage = _.extend({
       subject: subject,
       body: body,
       author: Meteor.user().emails[0].address,
       date: Date.new
     });
+
+
+    Messages.insert(newMessage);
 
     event.target.reset();
   }
