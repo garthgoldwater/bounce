@@ -1,10 +1,18 @@
 <template name="message">
-  {{ title }}
+
+<h1> Message: </h1>
+  {{ subject }}
   {{ author }}
   {{ body }}
 
-  <!-- {{ #each replies }} -->
-  <!--   {{> message&#45;partial }} -->
-  <!-- {{ /each }} -->
+  <h1> Replies: </h1>
+
+  {{ #if replies }}
+    {{ #each replies }}
+      {{> messagePartial }}
+    {{ /each }}
+  {{/if}}
+
+  {{> newMessage }}
 
 </template>

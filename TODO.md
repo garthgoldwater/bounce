@@ -1,16 +1,14 @@
 **Highest Priority**
-  - message show page
-  - reply to messages
+  - router
+  - styling
+  - tags
 
 **validations and error handling**
 - require login otherwise display an error
 
 **features**
-- remove autopublish, add publications and subscriptions
 - tags
 - routing
-- message show page
-- reply to messages
 - styling
 - tests (?? some future date)
 - usernames

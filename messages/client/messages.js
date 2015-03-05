@@ -1,14 +1,16 @@
 Template.messages.helpers({
   messages: function() {
-    return Messages.find();
+    return Messages.find({ parentId: {$exists: false}});
   },
   selectedMessage: function() {
-    return Messages.findOne(Session.get("selected"));
+    if(Session.get("selected")) {
+      return Messages.findOne(Session.get("selected"));
+    }else { return null; }
   }
 });
 
 Template.messages.events({
-  "click .message": function(event, template){
+  "click .top-level-message": function(event, template){
     Session.set("selected", this._id);
     console.log("you clicked " + this._id);
   }

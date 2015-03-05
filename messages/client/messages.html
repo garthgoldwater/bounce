@@ -1,10 +1,12 @@
 <template name="messages">
   {{#each messages}}
-    {{> messagePartial }}
+    {{> messagePartialTopLevel }}
   {{ /each }}
     {{> newMessage }}
 
-    {{> message selectedMessage }}
+    {{#if selectedMessage }}
+      {{> message selectedMessage }}
+    {{/if}}
 </template>
 
 
