@@ -1,6 +1,6 @@
 Template.messages.helpers({
   messages: function() {
-    return Messages.find({ parentId: {$exists: false}});
+    return Messages.find({ parentId: null });
   },
   selectedMessage: function() {
     if(Session.get("selected")) {
