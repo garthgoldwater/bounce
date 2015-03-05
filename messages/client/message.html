@@ -1,17 +1,25 @@
 <template name="message">
 
-<h1> Message: </h1>
-  {{ subject }}
-  {{ author }}
-  {{ body }}
+  <div class="message-show-title"> Message: </div>
+  <div class="message-show-subject">{{ subject }}</div>
+  <div class="message-show-author">{{ author }}</div>
+  <div class="message-show-body">{{ body }}</div>
 
-  <h1> Replies: </h1>
+<!-- put the replies index in its own template -->
+  <div class="replies-index-title"> Replies: </div>
 
   {{ #if replies }}
-    {{ #each replies }}
-      {{> messagePartial }}
-    {{ /each }}
-  {{/if}}
+    <ul class="replies-list">
+      {{ #each replies }}
+        <li class="reply-list-item">{{> messagePartial }}</li>
+      {{ /each }}
+    </ul>
+  <!-- for whatever reason i can't get this else to work   -->
+  <!-- {{ else }} -->
+  <!--   <div class="no&#45;replies"> -->
+  <!--     No replies yet! -->
+  <!--   </div> -->
+  {{ /if }}
 
   {{> newMessage }}
 

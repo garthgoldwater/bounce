@@ -1,13 +1,22 @@
 <template name="messages">
-  {{#each messages}}
-    {{> messagePartialTopLevel }}
-  {{ /each }}
-
-  {{> newMessageTopLevel }} 
+<section class="messages">
+<aside class="top-level-messages">
+  <ul class="top-level-messages">
+    {{#each messages}}
+      <li class="top-level-messages">
+        {{> messagePartialTopLevel }}
+      </li>
+    {{ /each }}
+  </ul>
+  {{> newMessageTopLevel }}
+</aside>
 
   {{#if selectedMessage }}
-    {{> message selectedMessage }}
+    <article class="selected-message">
+      {{> message selectedMessage }}
+    </article>
   {{/if}}
+</section>
 </template>
 
 
