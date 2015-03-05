@@ -1,3 +1,9 @@
+**Highest Priority**
+  - client subscriptions
+  - remove autopublish
+  - message show page
+  - reply to messages
+
 **validations and error handling**
 - require login otherwise display an error
 

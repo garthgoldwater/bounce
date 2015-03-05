@@ -1,0 +1,82 @@
+diff --git c/TODO.md w/TODO.md
+new file mode 100644
+index 0000000..1a31a07
+--- /dev/null
++++ w/TODO.md
+@@ -0,0 +1,24 @@
++**validations and error handling**
++- require login otherwise display an error
++
++**features**
++- remove autopublish, add publications and subscriptions
++- tags
++- routing
++- message show page
++- reply to messages
++- styling
++- tests (?? some future date)
++- usernames
++- private tags
++- foldable body summary for messages
++- tag page has links back to in-context messages
++
++**packages:**
++  - validations:
++    - simple-schema
++    - collection2
++  - roles / security
++
++**refactoring**
++  - turn everything into smart packages
+diff --git c/messages/client/main.js w/messages/client/main.js
+new file mode 100644
+index 0000000..8b13789
+--- /dev/null
++++ w/messages/client/main.js
+@@ -0,0 +1 @@
++
+diff --git c/messages/client/message_partial.html w/messages/client/message_partial.html
+index 1c184b4..60dcd3a 100644
+--- c/messages/client/message_partial.html
++++ w/messages/client/message_partial.html
+@@ -3,8 +3,8 @@
+     <div class="subject">
+       {{ subject }}
+     </div>
+-    <div class="body-summary">
+-      {{ bodySummary }}
++    <div class="body">
++      {{ body }}
+     </div>
+     <div class="author">
+       {{ author }}
+diff --git c/messages/client/new_message.js w/messages/client/new_message.js
+index 34262ab..a764912 100644
+--- c/messages/client/new_message.js
++++ w/messages/client/new_message.js
+@@ -5,13 +5,16 @@
+ 
+     event.preventDefault();
+ 
+-    Messages.insert({
++    newMessage = _.extend({
+       subject: subject,
+       body: body,
+       author: Meteor.user().emails[0].address,
+       date: Date.new
+     });
+ 
++
++    Messages.insert(newMessage);
++
+     event.target.reset();
+   }
+  });
+diff --git c/messages/server/publications.js w/messages/server/publications.js
+index e69de29..58c2656 100644
+--- c/messages/server/publications.js
++++ w/messages/server/publications.js
+@@ -0,0 +1,3 @@
++Meteor.publish('messages', function() {
++  return Messages.find();
++});
