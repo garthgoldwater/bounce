@@ -1,6 +1,4 @@
 **Highest Priority**
-  - client subscriptions
-  - remove autopublish
   - message show page
   - reply to messages
 

@@ -3,4 +3,3 @@ Template.messages.helpers({
     return Messages.find()
   },
 });
-
