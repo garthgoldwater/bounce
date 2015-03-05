@@ -1,0 +1,32 @@
+main.html:6:3:  {{> loginButtons }}
+main.html:7:3:  {{> messages }}
+main.html:8:8:  <!-- {{> tagPane }} -->
+messages/client/message.html:4:3:  {{ subject }}
+messages/client/message.html:5:3:  {{ author }}
+messages/client/message.html:6:3:  {{ body }}
+messages/client/message.html:10:3:  {{ #if replies }}
+messages/client/message.html:11:5:    {{ #each replies }}
+messages/client/message.html:12:7:      {{> messagePartial }}
+messages/client/message.html:13:5:    {{ /each }}
+messages/client/message.html:14:3:  {{/if}}
+messages/client/message.html:16:3:  {{> newMessage }}
+messages/client/message_partial.html:4:7:      {{ subject }}
+messages/client/message_partial.html:7:7:      {{ body }}
+messages/client/message_partial.html:10:7:      {{ author }}
+messages/client/message_partial_top_level.html:3:25:    <div class="subject {{ selected }}">
+messages/client/message_partial_top_level.html:4:7:      {{ subject }}
+messages/client/message_partial_top_level.html:7:7:      {{ body }}
+messages/client/message_partial_top_level.html:10:7:      {{ author }}
+messages/client/messages.html:2:3:  {{#each messages}}
+messages/client/messages.html:3:5:    {{> messagePartialTopLevel }}
+messages/client/messages.html:4:3:  {{ /each }}
+messages/client/messages.html:5:5:    {{> newMessage }}
+messages/client/messages.html:7:5:    {{#if selectedMessage }}
+messages/client/messages.html:8:7:      {{> message selectedMessage }}
+messages/client/messages.html:9:5:    {{/if}}
+messages/client/new_message.html:3:44:    <div><input type="text" placeholder = "{{messageType}} Subject" class="new-subject"></div>
+messages/client/new_message.html:4:48:    <div><input type="textarea" placeholder = "{{messageType}} Body" class="new-body"></div>
+tempdiff.txt:44:8:       {{ subject }}
+tempdiff.txt:47:8:-      {{ bodySummary }}
+tempdiff.txt:49:8:+      {{ body }}
+tempdiff.txt:52:8:       {{ author }}

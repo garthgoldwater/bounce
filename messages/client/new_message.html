@@ -1,8 +1,8 @@
 <template name="newMessage">
   <form class="new-message">
-    <input type="text" placeholder = "Message Subject" class="new-subject">
-    <input type="text" placeholder = "Message Body" class="new-body">
-    <input type="submit">
+    <div><input type="text" value = "Re: {{ parentSubject .. }}" class="new-subject"></div>
+    <div><input type="textarea" placeholder = "Reply Body" class="new-body"></div>
+    <div><input type="submit"></div>
   </form>
 </template>
 

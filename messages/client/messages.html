@@ -2,11 +2,12 @@
   {{#each messages}}
     {{> messagePartialTopLevel }}
   {{ /each }}
-    {{> newMessage }}
 
-    {{#if selectedMessage }}
-      {{> message selectedMessage }}
-    {{/if}}
+  {{> newMessageTopLevel }} 
+
+  {{#if selectedMessage }}
+    {{> message selectedMessage }}
+  {{/if}}
 </template>
 
 

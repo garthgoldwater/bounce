@@ -13,5 +13,9 @@ Template.messages.events({
   "click .top-level-message": function(event, template){
     Session.set("selected", this._id);
     console.log("you clicked " + this._id);
+  },
+  "onfocus .top-level-form": function(event, template){
+    Session.set("selected", null);
+    console.log("you unclicked");
   }
 });
