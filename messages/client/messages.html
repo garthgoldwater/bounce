@@ -1,22 +1,28 @@
 <template name="messages">
 <section class="messages">
-<aside class="top-level-messages">
-  <ul class="top-level-messages">
-    {{#each messages}}
-      <li class="top-level-messages">
-        {{> messagePartialTopLevel }}
-      </li>
-    {{ /each }}
-  </ul>
-  {{> newMessageTopLevel }}
-</aside>
+<core-animated-pages class="fit" selected="0" transitions="cross-fade-all hero-transition">
 
-  {{#if selectedMessage }}
-    <article class="selected-message">
-      {{> message selectedMessage }}
-    </article>
-  {{/if}}
+  <section class="top-level-messages">
+    <core-toolbar class="tall toolbar" hero-id="hero" hero>Inbox</core-toolbar>
+    <ul class="top-level-messages">
+      {{#each messages}}
+        <li class="top-level-messages" hero-p onclick="stuff()">
+          {{> messagePartialTopLevel }}
+        </li>
+      {{ /each }}
+    </ul>
+    {{> newMessageTopLevel }}
+  </section>
+
+  <section class="selected-message">
+    {{> message selectedMessage }}
+  </section>
+</core-animated-pages>
 </section>
+<script>
+  function stuff(e) {
+    var p = document.querySelector('core-animated-pages');
+    p.selected = p.selected ? 0 : 1;
+  }
+</script>
 </template>
-
-
