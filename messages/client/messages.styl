@@ -1,13 +1,13 @@
 @import 'jeet'
 
-section
+section.messages
   center(1080px)
+section > section
+  span(2/4)
 li, ul
   list-style none
   padding 0
   margin 0
-core-toolbar
-  font-size 2em
 body
   font-family helvetice, sans-serif
 
@@ -87,10 +87,3 @@ input
 .selected-message > .author
   font-weight bold
   margin-bottom 15px
-
-footer
-  position fixed
-  width 100%
-  bottom 0
-  height 2vh
-  background black

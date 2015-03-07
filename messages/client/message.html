@@ -1,12 +1,11 @@
 <template name="message">
-  <div class="selected-message" hero-id="hero" hero>
+  <div class="selected-message">
     <div class="subject">{{ subject }}</div>
     <div class="author">{{ author }}</div>
     <div class="date">{{ messageDate }}</div>
     <div class="body">{{ body }}</div>
   </div>
 
-<!-- put the replies index in its own template -->
   <div class="replies-index-title"></div>
 
   {{ #if replies }}
@@ -15,10 +14,5 @@
         <li class="reply-list-item">{{> messagePartial }}</li>
       {{ /each }}
     </ul>
-  {{ else }}
-    <div class="no-replies">
-      No replies yet!
-    </div>
   {{ /if }}
-
 </template>
