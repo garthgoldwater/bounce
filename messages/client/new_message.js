@@ -5,17 +5,20 @@ Template.newMessage.helpers({
     return parentMessage.subject;
   },
 });
-  
+
   Template.newMessage.events({
   "submit .new-message": function(event, template) {
-    var subject       = template.find(".new-subject").value,
-        body          = template.find(".new-body").value,
+    var body          = template.find(".new-body").value,
         createdAt     = moment().format(),
         parent        = Messages.findOne(Session.get("selected")) || false,
+        subject,
         parentId      = null;
 
     if(parent) {
-      parentId = parent._id
+      parentId = parent._id;
+      subject = parent.subject;
+    } else {
+      subject = template.find('.new-message').val() || '' ;
     }
 
     event.preventDefault();
@@ -27,7 +30,6 @@ Template.newMessage.helpers({
     createdAt: createdAt,
     parentId: parentId
   });
-
 
   Messages.insert(newMessage);
 
