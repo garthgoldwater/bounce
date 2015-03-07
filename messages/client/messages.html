@@ -1,9 +1,9 @@
 <template name="messages">
 <section class="messages">
 <core-animated-pages class="fit" selected="0" transitions="cross-fade-all hero-transition">
-
   <section class="top-level-messages">
     <core-toolbar class="tall toolbar" hero-id="hero" hero>Inbox</core-toolbar>
+
     <ul class="top-level-messages">
       {{#each messages}}
         <li class="top-level-messages" hero-p onclick="stuff()">
@@ -11,20 +11,39 @@
         </li>
       {{ /each }}
     </ul>
+
     {{> newMessageTopLevel }}
-    <footer>footer</footer>
+
+    <footer></footer>
   </section>
 
   <section>
     {{> message selectedMessage }}
-    <footer>footer</footer>
+
+    {{> newMessage }}
+
+    <footer>
+      <button onclick="stuff();">Inbox</button>
+    </footer>
   </section>
 </core-animated-pages>
 </section>
-<script>
-  function stuff(e) {
-    var p = document.querySelector('core-animated-pages');
-    p.selected = p.selected ? 0 : 1;
-  }
-</script>
+  <script>
+    function stuff(e) {
+      var p = document.querySelector('core-animated-pages');
+      p.selected = p.selected ? 0 : 1;
+    }
+  </script>
+  <script>
+    function replyStuff(e) {
+      var p = document.querySelector('core-animated-pages');
+      p.selected = 2
+    }
+  </script>
+  <script>
+    function backToMessage(e) {
+      var p = document.querySelector('core-animated-pages');
+      p.selected = 1
+    }
+  </script>
 </template>

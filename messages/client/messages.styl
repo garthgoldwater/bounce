@@ -11,9 +11,48 @@ core-toolbar
 body
   font-family helvetice, sans-serif
 
+input[type="submit"]
+  background black
+  border none
+  color white
+  padding 15px 30px
+  font-weight bolder
+textarea
+  width 97%
+  height 130px
+  border none
+.new-message-form
+  padding 10px
+  border 1px solid black
+  margin-bottom 25px
+  margin-top 10px
+*:focus
+  outline 0px none transparent
+
+.new-message-top-level
+  padding 20px
+  padding-top 0
+  border 2px solid whitesmoke
+  border-top 0
+  margin-bottom 25px
+input
+  border none
+.new-body
+  padding 10px
+.new-header
+  background black
+  color white
+  padding 10px
+  margin-left 22.5px
+  margin-right 22.5px
+  margin-top 25px
+.new-subject
+  padding 10px
+  border-bottom 2px solid whitesmoke
+
 .top-level-message, .common-message, .selected-message
   padding 15px 17px 15px 25.5px
-  overflow: auto;
+  overflow auto
 
 .author
   span(1/5)
@@ -51,6 +90,7 @@ body
 
 footer
   position fixed
-  background white
   width 100%
   bottom 0
+  height 2vh
+  background black
