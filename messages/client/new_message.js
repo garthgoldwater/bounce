@@ -10,7 +10,7 @@ Template.newMessage.helpers({
   "submit .new-message": function(event, template) {
     var subject       = template.find(".new-subject").value,
         body          = template.find(".new-body").value,
-        // createdAt     = new Date(),
+        createdAt     = moment().format(),
         parent        = Messages.findOne(Session.get("selected")) || false,
         parentId      = null;
 
@@ -24,7 +24,7 @@ Template.newMessage.helpers({
     subject: subject,
     body: body,
     author: Meteor.user().emails[0].address,
-    createdAt: Date.now(),
+    createdAt: createdAt,
     parentId: parentId
   });
 

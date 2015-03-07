@@ -1,16 +1,14 @@
 <template name="messagePartial">
-  <div class="message">
-    <div class="author">
-      {{ author }}
-    </div>
-    <div class="subject">
-      {{ subject }}
-    </div>
-    <div class="body">
-      {{ body }}
-    </div>
-    <div class="date">
-      {{ createdAt }}
-    </div>
+<div class="common-message">
+  <div class="author">
+    {{ author }}
   </div>
+  <div class="date">
+    {{ messageDate }}
+  </div>
+
+  <div class="body">
+    {{ body }}
+  </div>
+</div>
 </template>

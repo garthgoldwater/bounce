@@ -1,12 +1,13 @@
 <template name="message">
   <div class="selected-message" hero-id="hero" hero>
-  <div class="message-show-subject">{{ subject }}</div>
-  <div class="message-show-author">{{ author }}</div>
-  <div class="message-show-body">{{ body }}</div>
+    <div class="subject">{{ subject }}</div>
+    <div class="author">{{ author }}</div>
+    <div class="date">{{ messageDate }}</div>
+    <div class="body">{{ body }}</div>
   </div>
 
 <!-- put the replies index in its own template -->
-  <div class="replies-index-title"> Replies: </div>
+  <div class="replies-index-title"></div>
 
   {{ #if replies }}
     <ul class="replies-list">

@@ -11,5 +11,46 @@ core-toolbar
 body
   font-family helvetice, sans-serif
 
-.top-level-message
+.top-level-message, .common-message, .selected-message
   padding 15px 17px 15px 25.5px
+  overflow: auto;
+
+.author
+  span(1/5)
+.body-wrapper
+  span(3/5)
+.date
+  span(1/5)
+.top-level-messages
+  border-bottom 2px solid whitesmoke
+
+.common-message
+  padding-bottom 30px
+  border-bottom 2px solid whitesmoke
+.common-message > .body
+  span(5/5)
+.common-message > .date, .selected-message > .date
+  span(1/5)
+  shift(3/5)
+.common-message > .author
+  margin-bottom 15px
+  font-weight bold
+
+.selected-message
+  background whitesmoke
+.selected-message > .body
+  span (5/5)
+.selected-message > .subject
+  font-size x-large
+  border-bottom 2px solid whitesmoke
+  padding-bottom 10px
+  margin-bottom 10px
+.selected-message > .author
+  font-weight bold
+  margin-bottom 15px
+
+footer
+  position fixed
+  background white
+  width 100%
+  bottom 0
